@@ -15,7 +15,7 @@ const MONGO_URI = process.env.MONGO_URI;
 
 app.use(cors(
   {
-    origin: ["https://backend-blog-kappa-nine.vercel.app/"],
+    origin: ["https://ajaykumardhurwe.github.io/frontend.blog/"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
   }
