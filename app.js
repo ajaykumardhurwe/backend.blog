@@ -55,20 +55,50 @@
 
 
 
-// file: server.js
-import http from 'http'; // ✅ Use this
+// // file: server.js
+// import http from 'http'; // ✅ Use this
 
 
-// Create a server
-const server = http.createServer((req, res) => {
-  // Set the response header
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  // Send the response body
-  res.end('Hello World\n');
+// // Create a server
+// const server = http.createServer((req, res) => {
+//   // Set the response header
+//   res.writeHead(200, { 'Content-Type': 'text/plain' });
+//   // Send the response body
+//   res.end('Hello World\n');
+// });
+
+// // Server listens on port 3000
+// const PORT = 3000;
+// server.listen(PORT, () => {
+//   console.log(`✅ Server running at http://localhost:${PORT}/`);
+// });
+
+
+
+
+
+
+
+
+
+
+// app.js
+import express from 'express';
+
+const app = express();
+const PORT = 3000;
+
+// Basic GET route
+app.get('/', (req, res) => {
+  res.send('✅ Hello World from Express with ES Modules!');
 });
 
-// Server listens on port 3000
-const PORT = 3000;
-server.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}/`);
+// Another example route
+app.get('/about', (req, res) => {
+  res.send('📘 This is the about page.');
+});
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`🚀 Server is running at http://localhost:${PORT}`);
 });
